@@ -1,0 +1,21 @@
+.HDRBTN {
+    background-origin: border-box;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid transparent;
+    width: 90px;
+    height: 30px;
+    border-radius: 1px;
+    background-color: transparent;
+    color: white;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(245, 0, 0, 0)), linear-gradient(101deg, #ffd505, #ff8600);;
+    box-shadow: 2px 1000px 1px #262626 inset;
+    font-size: 14px;
+
+}
+
+.HDRBTN:hover {
+    box-shadow: none;
+    cursor: pointer;
+    text-shadow: 1px 1px rgba(73, 32, 1, 0.8);
+}
+

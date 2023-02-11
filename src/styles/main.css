@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    background-color: #1c1c1c;
+    height: 100%;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.App {
+
+
+}
+
+
+
+.main-container {
+    margin: 20px auto;
+    width: 800px;
+    border: 1px solid gray;
+    flex: 1 1 auto;
+}
+.main-container a {
+    text-decoration: none;
+    color: black;
+}
+.content-container {
+
+    display: flex;
+
+}
+.deleteBTN {
+    width: 30px;
+    height: 30px;
+    background-color: crimson;
+    border: none;
+    padding: 2px;
+    margin: auto 5px auto 0;
+}
+.deleteBTN:active {
+    background-color: darkblue;
+    color: red
+}
+
+.comment-container {
+    display: flex;
+    border: 1px solid gray;
+    max-height: 200px;
+    margin: 10px;
+    width: 100%;
+    flex-direction: column;
+
+
+
+}
+.commentNameAndData {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    background-color: honeydew;
+}
+.commentNameAndData > div {
+    margin: 0 15px;
+}
+.commentDesc {
+    padding: 5px;
+    font-family: Calibri, serif;
+    background-color: ghostwhite;
+    overflow: auto;
+
+
+}
+
+.sendForm-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid gray;
+
+
+}
+.sendForm-container > button{
+    width: 80px;
+    height: 30px;
+    background-color: lightgreen;
+    color: darkblue;
+    border: 1px solid darkblue;
+    margin-left: 10px;
+}
+.sendForm-container > button:hover{
+    background-color: limegreen;
+    color: lightgreen;
+    border: 1px solid lightgreen;
+}
+.allInputs {
+    display: flex;
+    flex-direction: column;
+}
+.inpName {
+    margin-bottom: 5px;
+    padding: 3px;
+    color: dimgray;
+    font-size: 12px;
+}
+.inpDesc {
+    resize: none;
+    height: 100px;
+    width: 280px;
+    padding: 5px;
+    color: dimgray;
+}
+
+

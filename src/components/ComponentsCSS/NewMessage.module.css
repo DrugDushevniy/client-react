@@ -1,0 +1,29 @@
+.messageContainer {
+
+    padding: 5px;
+    background-color: rgba(238,238,238,0.51);
+    opacity: 100%;
+    max-width: 60%;
+    min-width: 30%;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.author {
+    margin-right: 40px
+}
+
+
+.messageInfo {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+.messageBody {
+    padding: 5px;
+    min-height: 25px;
+    max-height: 400px;
+    overflow-y: auto;
+}

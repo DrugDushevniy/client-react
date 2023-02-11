@@ -1,0 +1,38 @@
+
+
+.header {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 60px;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.footer {
+
+
+    height: 50px;
+    background-color: #282828;
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+.linksFooter {
+    display: flex;
+    width: 230px;
+    justify-content: space-between;
+}
+
+.linksFooter > *{
+    text-decoration: none;
+    color: white;
+
+}
