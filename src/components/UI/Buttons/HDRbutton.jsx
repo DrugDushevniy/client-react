@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from "../UICSS/HDRbutton.module.css"
+import cl from "./HDRbutton.module.css"
 
 const HDRbutton = ({children, onClick, ...props}) => {
     return (

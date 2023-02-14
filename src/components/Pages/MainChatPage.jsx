@@ -96,13 +96,24 @@ const MainChatPage = () => {
     return (
         <div className={cl.mainContainer}>
             <div className={cl.leftMenuWindow}>
-            <RoomBlock />
-                <RoomBlock />
-                <RoomBlock />
-                <RoomBlock />
-                <RoomBlock />
-                <RoomBlock />
-                <RoomBlock />
+                <div className={cl.roomsMainHeader}>
+                    <div className={cl.roomsHeader}>
+                        <div className={cl.menuButton}>lll</div>
+                        <div className={cl.roomSearch}>
+                            <input className={cl.roomSearchInput} placeholder="Search" />
+                        </div>
+                    </div>
+                </div>
+                <div className={cl.chatList}>
+                    <RoomBlock />
+                    <RoomBlock />
+                    <RoomBlock />
+                    <RoomBlock />
+                    <RoomBlock />
+                    <RoomBlock />
+                    <RoomBlock />
+                </div>
+
 
 
             </div>
