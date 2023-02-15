@@ -9,7 +9,8 @@ const NewMessage = ({author, message, date, messagesEndRef, connection}) => {
            (<div>{connection}</div>)
             :(<div ref={messagesEndRef} className={cl.messageContainer}>
             <div className={cl.messageInfo}>
-                <div className={cl.author}>{author}</div>
+                <h4 className={cl.author}>{author}</h4>
+                <div className={cl.separator}/>
                 <div className={cl.date}>{date}</div>
             </div>
             <div className={cl.messageBody}>{message}</div>

@@ -1,20 +1,24 @@
 .messageContainer {
-
+    font-family: 'Open Sans', sans-serif;
     padding: 5px;
-    background-color: rgba(238,238,238,0.51);
+    background: linear-gradient(to right, rgb(27 45 64), rgb(30 56 82 / 63%), rgb(12 174 210 / 46%));
+    color: #b4def2;
     opacity: 100%;
     max-width: 60%;
     min-width: 30%;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 1px dotted rgb(27 112 136);
     margin-bottom: 10px;
-
+    margin-right: 20%;
 }
 
 .author {
-    margin-right: 40px
 }
 
+.separator {
+    flex-grow: 1;
+    min-width: 20px;
+}
 
 .messageInfo {
     border-bottom: 1px solid black;

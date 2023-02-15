@@ -24,8 +24,8 @@ function App() {
                        <Route path="posts" element={<Comments />}/>
                        <Route path="posts/:id" element={<SelectedComment />} />
                        <Route path="*" element={<NotFound  />}/>
-                       <Route path="chat" element={<MainChatPage />}/>
                    </Route>
+                    <Route path="chat" element={<MainChatPage />}/>
                 </Routes>
           </>
 

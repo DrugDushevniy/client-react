@@ -1,9 +1,9 @@
 import React from 'react';
 import cl from "./HDRbutton.module.css"
 
-const HDRbutton = ({children, onClick, ...props}) => {
+const HDRbutton = ({children, style, onClick, ...props}) => {
     return (
-        <button className={cl.HDRBTN} onClick={onClick}>
+        <button style={style} className={cl.HDRBTN} onClick={onClick}>
             {children}
         </button>
     );
