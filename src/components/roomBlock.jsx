@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from "../Pages/PagesCSS/MainChatPage.module.css";
+import cl from "./Pages/PagesCSS/MainChatPage.module.css";
 
 const RoomBlock = () => {
     return (

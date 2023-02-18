@@ -4,7 +4,7 @@ import NewMessage from "../NewMessage";
 import HDRbutton from "../UI/Buttons/HDRbutton";
 import axios from "axios";
 import {useLocation} from 'react-router-dom'
-import RoomBlock from "../ComponentsCSS/roomBlock";
+import RoomBlock from "../roomBlock";
 
 let socket;
 
@@ -15,7 +15,8 @@ const MainChatPage = () => {
     const messagesEndRef = useRef(null);
 
     useEffect(()=>{
-        socket = new WebSocket("ws://87.249.44.57:5000/")
+        // ws://87.249.44.57:5000/ws
+        socket = new WebSocket("ws://87.249.44.57:5000/wsn")
         socket.onopen = (event) => {
             console.log('Client: Ты подключился');
             socket.send(JSON.stringify({
