@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 .leftMenuWindow {
-    background-color: rgba(59,59,59,0.85);
+    background-color: rgb(22, 26, 33);
     height: 100%;
     position: relative;
     display: flex;
@@ -24,8 +24,13 @@
     align-items: flex-end;
     height: 100%;
     background-image: url("../../../../bg.png");
-    background-size: cover;
-    background-position: center;
+
+    background-size: 100% 120%;
+    background-position: center, center;
+
+
+
+
     background-repeat: no-repeat;
 
 }
@@ -70,15 +75,15 @@
     border-radius: 12px;
     padding: 5px;
     margin-right: 10px;
-    border-top: 1px solid skyblue;
-    border-bottom: 1px solid orange;
+    border-top: 1px solid #7cc4ff;
+    border-bottom: 1px solid #b48bff;
     border-right: transparent;
     border-left:transparent;
 
 }
 .messInput:focus {
-
-    outline: 1px solid greenyellow;
+    border: none;
+    outline: 1px solid #00f7ff;
 
 }
 .messInput::placeholder {
@@ -104,7 +109,7 @@
     width: 100%;
     overflow: hidden;
     color: whitesmoke;
-    background-color: rgba(59,59,59,0.85);
+    background-color:rgb(22, 26, 33);
     border: rgba(59,59,59,0.85);
     cursor: pointer;
 }
@@ -124,13 +129,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid #436c86;
     transform: rotate(90deg);
     padding-left: 2px;
     cursor: pointer;
+    margin-left: 10px;
+    color: #436c86;
 }
 .roomSearch {
-    margin-left: 0.8125rem;
+    margin-left: 1.3rem;
     width: calc(100% - 3.25rem);
 }
 .roomSearchInput {
@@ -140,8 +147,11 @@
     background-color: #161616;
     padding: 0.7rem;
     width: 100%;
-    color: orange;
+    color: skyblue;
     outline: none;
+}
+.roomSearchInput::placeholder {
+    color: #436c86 ;
 }
 .chatList {
     height: 90%;
