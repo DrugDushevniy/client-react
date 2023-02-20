@@ -7,6 +7,8 @@ import {MainPage} from "./components/Pages/MainPage.jsx";
 import {Layout} from "./components/Layout";
 import {SelectedComment} from "./components/Pages/SelectedComment";
 import MainChatPage, {closeConn} from "./components/Pages/MainChatPage";
+import LoginPage from "./components/Pages/LoginPage";
+import RegistrationPage from "./components/Pages/RegistrationPage";
 
 
 
@@ -26,6 +28,8 @@ function App() {
                        <Route path="*" element={<NotFound  />}/>
                    </Route>
                     <Route path="chat" element={<MainChatPage />}/>
+                    <Route path="login" element={<LoginPage />}/>
+                    <Route path="registration" element={<RegistrationPage />} />
                 </Routes>
           </>
 

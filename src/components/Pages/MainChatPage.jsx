@@ -137,7 +137,7 @@ const MainChatPage = () => {
                         }
                     </div>
                     <div className={cl.inputForm}>
-                        <input className={cl.messInput} value={input} onChange={e=>setInput(e.target.value)} placeholder="Введите сообщение..."/>
+                        <input className={cl.messInput} onKeyDown={e=>{if(e.key==="Enter")sendMessage()}} value={input} onChange={e=>setInput(e.target.value)} placeholder="Введите сообщение..."/>
                         <button className={cl.sendMessageButton} onClick={sendMessage}>-S E N D-</button>
                     </div>
                 </div>
