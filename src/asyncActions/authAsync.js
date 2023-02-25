@@ -31,7 +31,7 @@ export const registrationAsync = (username, password) => {
 export const checkAuthAsync = () => {
     return (dispatch) => {
         dispatch(isLoadingAction(true))
-        axios.get(`${API_URL}/refresh`,{withCredentials: true})
+        axios.get(`${API_URL}/refresh`,{withCredentials: true, headers: {'Access-Control-Allow-Origin': 'http://1253919-ca24285.tw1.ru/'}})
             .then(res=>dispatch(CheckAuthAction(res.data)))
             .catch(e=>dispatch(ErrorAction(e.response.data.message)))
 
