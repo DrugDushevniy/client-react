@@ -5,12 +5,12 @@ import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {AuthReducer, LoginAction} from "../../store/AuthReducer.ts";
 import AuthService from "../../Service/AuthService.ts";
-import {loginAsync,logoutAsync} from "../../asyncActions/authAsync.js";
+import {loginAsync} from "../../asyncActions/authAsync.js";
 
 
 const LoginPage = () => {
-    const [username, setUsername] = useState("user");
-    const [password, setPassword] = useState("user");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const dispatch = useDispatch()
     return (
         <div className={cl.loginMainContainer}>
@@ -34,7 +34,6 @@ const LoginPage = () => {
                        placeholder="Введите пароль"
                        type={"password"}/>
                 <button onClick={()=>dispatch(loginAsync(username,password))} className={cl.enterBTN}>-LOGIN-</button>
-                <button onClick={()=>dispatch(logoutAsync())} className={cl.enterBTN}>-LOGOUT-</button>
             </div>
         </div>
     );

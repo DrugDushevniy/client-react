@@ -6,7 +6,8 @@ import axios from "axios";
 import {redirect, useLocation} from 'react-router-dom'
 import RoomBlock from "../roomBlock";
 import $api from "../../http/interceptorJWT";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {logoutAsync} from "../../asyncActions/authAsync";
 
 let socket;
 
@@ -17,6 +18,7 @@ const MainChatPage = () => {
     const [statusPage, setStatusPage] = useState(false)
     const messagesEndRef = useRef(null);
     const Auth = useSelector(state=> state.authRed)
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         // ws://87.249.44.57:5000/ws
@@ -105,6 +107,7 @@ const MainChatPage = () => {
                 <div className={cl.roomsMainHeader}>
                     <div className={cl.roomsHeader}>
                         <div className={cl.menuButton}>lll</div>
+                        <button onClick={()=>dispatch(logoutAsync())} className={cl.enterBTN}>-LOGOUT-</button>
                         <div className={cl.roomSearch}>
                             <input className={cl.roomSearchInput} placeholder="Search" />
                         </div>
@@ -144,7 +147,6 @@ const MainChatPage = () => {
                     <div className={cl.inputForm}>
                         <input className={cl.messInput} onKeyDown={e=>{if(e.key==="Enter")sendMessage()}} value={input} onChange={e=>setInput(e.target.value)} placeholder="Введите сообщение..."/>
                         <button className={cl.sendMessageButton} onClick={sendMessage}>-S E N D-</button>
-                        <button className={cl.sendMessageButton} onClick={getUsers}>get     Users</button>
                         <div>{listUsers.map(curr=>{
                             return <div key={Date.now()}>{curr}</div>
                         })}</div>
