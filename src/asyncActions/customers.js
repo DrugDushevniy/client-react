@@ -5,6 +5,6 @@ export const fetchCustomers = () => {
             fetch('https://jsonplaceholder.typicode.com/users')
                 .then(response => response.json())
                 .then(json =>dizpatch(AddManyCustomersAction(json)))
-
         }
 }
+

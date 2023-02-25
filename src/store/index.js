@@ -4,12 +4,14 @@ import {CustomerReducer} from "./CustomerReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import {CommentListReducer} from "./CommentListReducer";
+import {AuthReducer} from "./AuthReducer.ts";
 
 
 const rootReducer = combineReducers({
     numbersRed: NumberReducer,
     customerRed: CustomerReducer,
-    commentsRed: CommentListReducer
+    commentsRed: CommentListReducer,
+    authRed: AuthReducer,
 })
 
 

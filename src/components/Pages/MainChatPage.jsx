@@ -3,20 +3,24 @@ import cl from "./PagesCSS/MainChatPage.module.css"
 import NewMessage from "../NewMessage";
 import HDRbutton from "../UI/Buttons/HDRbutton";
 import axios from "axios";
-import {useLocation} from 'react-router-dom'
+import {redirect, useLocation} from 'react-router-dom'
 import RoomBlock from "../roomBlock";
+import $api from "../../http/interceptorJWT";
+import {useSelector} from "react-redux";
 
 let socket;
 
 const MainChatPage = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState([]);
+    const [listUsers, setListUsers] = useState([])
     const [statusPage, setStatusPage] = useState(false)
     const messagesEndRef = useRef(null);
+    const Auth = useSelector(state=> state.authRed)
 
     useEffect(()=>{
         // ws://87.249.44.57:5000/ws
-        socket = new WebSocket("ws://87.249.44.57:5000/ws")
+        socket = new WebSocket("ws://localhost:5000/ws")
         socket.onopen = (event) => {
             console.log('Client: Ты подключился');
             socket.send(JSON.stringify({
@@ -32,6 +36,7 @@ const MainChatPage = () => {
       useEffect(()=>{
           socket.onmessage = (event) => {
               let parsedData = JSON.parse(event.data)
+              console.log(parsedData)
               switch (parsedData.method) {
                   case "first-connection":
                       setMessages(parsedData.allMessages)
@@ -66,18 +71,18 @@ const MainChatPage = () => {
         messagesEndRef.current && messagesEndRef.current.scrollIntoView();
     };
 
-
-
-
-
     useEffect(()=>{
         scrollToBottom()
     },[messages]);
 
+    const getUsers = () => {
+        $api.get('/users').then(res=>setListUsers((prev)=>[...prev, res])).catch(e=>console.log('АШИПКА: ', e.response.data))
+    }
+
     const sendMessage =() =>{
 
         let message = {
-            author: "Николай",
+            author: Auth.user.username ,
             body: input,
             date: getDateTime(),
             ids: Date.now()
@@ -139,6 +144,10 @@ const MainChatPage = () => {
                     <div className={cl.inputForm}>
                         <input className={cl.messInput} onKeyDown={e=>{if(e.key==="Enter")sendMessage()}} value={input} onChange={e=>setInput(e.target.value)} placeholder="Введите сообщение..."/>
                         <button className={cl.sendMessageButton} onClick={sendMessage}>-S E N D-</button>
+                        <button className={cl.sendMessageButton} onClick={getUsers}>get     Users</button>
+                        <div>{listUsers.map(curr=>{
+                            return <div key={Date.now()}>{curr}</div>
+                        })}</div>
                     </div>
                 </div>
 
