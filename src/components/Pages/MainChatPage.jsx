@@ -22,7 +22,7 @@ const MainChatPage = () => {
 
     useEffect(()=>{
         // ws://87.249.44.57:5000/ws
-        socket = new WebSocket("ws://87.249.44.57:5000/ws")
+        socket = new WebSocket("ws://87.249.44.57:5000/api/ws")
         socket.onopen = (event) => {
             console.log('Client: Ты подключился');
             socket.send(JSON.stringify({
